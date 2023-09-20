@@ -1,5 +1,5 @@
 {% set name = "pyproject2conda" %}
-{% set version = "0.5.1" %}
+{% set version = "0.6.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pyproject2conda-{{ version }}.tar.gz
-  sha256: 62e0d81bc3cd14c9e8b2281eee2103a88652201acd8b9caaba3bd881bcfd9cbc
+  sha256: c22d67f22c749c9e58c3d79da9fd830e959541fa508f144a65488169133f69ec
 
 build:
   entry_points:
     - pyproject2conda = pyproject2conda.cli:app
+    - p2c = pyproject2conda.cli:app
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
   number: 0
@@ -36,6 +37,7 @@ test:
   commands:
     - pip check
     - pyproject2conda --help
+    - p2c --help
   requires:
     - pip
 
