@@ -13,6 +13,7 @@ build:
   entry_points:
     - pyproject2conda = pyproject2conda.cli:app
     - p2c = pyproject2conda.cli:app
+  noarch: python
   script: {{ PYTHON }} -m pip install . -vv
   number: 0
 
