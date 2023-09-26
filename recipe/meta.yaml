@@ -10,7 +10,6 @@ source:
   sha256: 5b7a803601698d038d3bd1c57ece534ed495c886f50694a86ec95e5ca7ec84db
 
 build:
-  skip: true  # [py<38]
   entry_points:
     - pyproject2conda = pyproject2conda.cli:app
     - p2c = pyproject2conda.cli:app
