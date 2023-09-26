@@ -30,7 +30,7 @@ requirements:
     - tomlkit
     - typer
     - packaging
-    - typing-extensions  # [py<39]
+    - typing-extensions
 
 test:
   imports:
