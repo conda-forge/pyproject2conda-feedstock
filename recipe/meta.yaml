@@ -1,5 +1,5 @@
 {% set name = "pyproject2conda" %}
-{% set version = "0.6.1" %}
+{% set version = "0.7.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,13 +7,13 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pyproject2conda-{{ version }}.tar.gz
-  sha256: 71faee0a6689c07bf66a1266e5184957eb2f222146fc3182e36e75a51018e401
+  sha256: 5b7a803601698d038d3bd1c57ece534ed495c886f50694a86ec95e5ca7ec84db
 
 build:
+  skip: true  # [py<38]
   entry_points:
     - pyproject2conda = pyproject2conda.cli:app
     - p2c = pyproject2conda.cli:app
-  noarch: python
   script: {{ PYTHON }} -m pip install . -vv
   number: 0
 
@@ -28,8 +28,9 @@ requirements:
     - tomli
     - ruamel.yaml
     - tomlkit
-    - rich-click
+    - typer
     - packaging
+    - typing-extensions  # [py<39]
 
 test:
   imports:
