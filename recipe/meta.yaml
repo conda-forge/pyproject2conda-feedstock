@@ -1,5 +1,5 @@
 {% set name = "pyproject2conda" %}
-{% set version = "0.7.0" %}
+{% set version = "0.8.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pyproject2conda-{{ version }}.tar.gz
-  sha256: 5b7a803601698d038d3bd1c57ece534ed495c886f50694a86ec95e5ca7ec84db
+  sha256: 53f3c3d5cc76720c0c44d7a16494ff50adc82d57a2696a2583010efdbee4a735
 
 build:
   entry_points:
