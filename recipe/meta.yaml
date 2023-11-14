@@ -1,5 +1,5 @@
 {% set name = "pyproject2conda" %}
-{% set version = "0.8.0" %}
+{% set version = "0.9.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pyproject2conda-{{ version }}.tar.gz
-  sha256: 53f3c3d5cc76720c0c44d7a16494ff50adc82d57a2696a2583010efdbee4a735
+  sha256: d2ef7f6a7b67004de2f285cf684eced981337c36ceeeaa4dbe0648bdb8b58bf1
 
 build:
   entry_points:
@@ -21,7 +21,7 @@ requirements:
   host:
     - python >=3.8
     - setuptools >=61.2
-    - setuptools-scm >=7.0
+    - setuptools-scm >=8.0
     - pip
   run:
     - python >=3.8
@@ -44,7 +44,9 @@ test:
 
 about:
   home: https://github.com/usnistgov/pyproject2conda
-  summary: A script to convert a Python project declared on a pyproject.toml to a conda environment.
+  summary:
+    A script to convert a Python project declared on a pyproject.toml to a conda
+    environment.
   description: |
     A script to convert a Python project declared on a pyproject.toml to a conda environment.
   license: NIST-PD
