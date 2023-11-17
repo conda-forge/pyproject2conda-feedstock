@@ -1,5 +1,5 @@
 {% set name = "pyproject2conda" %}
-{% set version = "0.9.0" %}
+{% set version = "0.10.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pyproject2conda-{{ version }}.tar.gz
-  sha256: d2ef7f6a7b67004de2f285cf684eced981337c36ceeeaa4dbe0648bdb8b58bf1
+  sha256: e9338adee3370b54efd12496d1773deea442f38dbfca042a50ec3658cc6207e9
 
 build:
   entry_points:
@@ -26,7 +26,6 @@ requirements:
   run:
     - python >=3.8
     - tomli
-    - ruamel.yaml
     - tomlkit
     - typer
     - packaging
