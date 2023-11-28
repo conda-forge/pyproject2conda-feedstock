@@ -1,5 +1,5 @@
 {% set name = "pyproject2conda" %}
-{% set version = "0.10.0" %}
+{% set version = "0.11.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pyproject2conda-{{ version }}.tar.gz
-  sha256: e9338adee3370b54efd12496d1773deea442f38dbfca042a50ec3658cc6207e9
+  sha256: 383838d34cd7eef9a2bfd218fd004c4a8243115c2dec466535280d9c9180a2f9
 
 build:
   entry_points:
@@ -29,7 +29,7 @@ requirements:
     - tomlkit
     - typer
     - packaging
-    - typing-extensions
+    - typing-extensions  # [py<39]
 
 test:
   imports:
