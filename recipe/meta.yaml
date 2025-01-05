@@ -15,17 +15,17 @@ build:
     - pyproject2conda = pyproject2conda.cli:app
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.8,<3.14
+    - python {{ python_min }}
     - hatch-fancy-pypi-readme
     - hatch-vcs
     - hatchling
     - pip
   run:
-    - python >=3.8,<3.14
+    - python >={{ python_min }},<3.14
     - packaging
     - tomli
     - typer
@@ -40,6 +40,7 @@ test:
     - p2c --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/usnistgov/pyproject2conda
