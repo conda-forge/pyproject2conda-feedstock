@@ -1,5 +1,6 @@
 {% set name = "pyproject2conda" %}
-{% set version = "0.16.0" %}
+{% set version = "0.17.0" %}
+{% set python_min = "3.8" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pyproject2conda-{{ version }}.tar.gz
-  sha256: fa1dfd4ac2ac703878316de0185ea710fd2ef80be09b2ad7e9ff16096df11266
+  sha256: e1abc3a3ac1e8df47d5226b74dea883f877cc023ee48b7cd2111f9574c91f110
 
 build:
   entry_points:
@@ -15,7 +16,7 @@ build:
     - pyproject2conda = pyproject2conda.cli:app
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
@@ -25,7 +26,7 @@ requirements:
     - hatchling
     - pip
   run:
-    - python >={{ python_min }},<3.14
+    - python >={{ python_min }}
     - packaging
     - tomli
     - typer
