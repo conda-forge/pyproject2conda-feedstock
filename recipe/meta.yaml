@@ -27,6 +27,7 @@ requirements:
     - pip
   run:
     - python >={{ python_min }}
+    - dependency-groups
     - packaging
     - tomli
     - typer
